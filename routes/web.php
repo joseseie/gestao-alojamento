@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/login', function () {
+    return redirect()->to('/admin');
+})->name('login');
+
 Route::get('/', function () {
     return view('welcome');
 });
