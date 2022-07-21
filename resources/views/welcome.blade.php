@@ -38,6 +38,38 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
 
+                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                    <div class="grid">
+
+                        <form method="get" action="{{ route('search') }}">
+
+                            @csrf
+
+                            <input
+                                type="text"
+                                name="searchText"
+                                class="input-text"
+                                value="{{ $sText ? $sText : '' }}"
+                                placeholder="Pesquisar"
+                                style="width: 100%;height: 50px;padding: 5px;font-size: 15pt"
+                            >
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    @if(count($foundUsers) > 0)
+                    <ul>
+                        @foreach($foundUsers as $user)
+                            <li>#({{ $user->id }}) {{ $user->name }} => {{ $user->email }}</li>
+                        @endforeach
+                    </ul>
+                    @elseif($sText)
+                        <span style="font-size: 14pt;color: red">Nenhum estudante ou utilizador foi encontrado com o nome ou email: <b>{{ $sText }}</b></span>
+                    @endif
+                </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
