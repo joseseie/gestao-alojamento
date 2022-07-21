@@ -14,15 +14,16 @@ use \App\Http\Controllers\GenericController;
 |
 */
 
+Route::get('/', [GenericController::class, 'indexHandler'])->name('index');
 Route::get('/search', [GenericController::class, 'search'])->name('search');
 
 Route::get('/login', function () {
     return redirect()->to('/admin');
 })->name('login');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 ///admin/cursos
 Route::group(['prefix' => 'admin'], function () {

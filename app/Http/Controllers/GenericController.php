@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class GenericController extends Controller
 {
+    public function indexHandler (Request $request) {
+
+        return view('index');
+
+    }
     public function search (Request $request) {
 
         $sText = $request->query('searchText'); //texto de pesquisar
@@ -17,7 +22,7 @@ class GenericController extends Controller
             ->orWhere('email', 'LIKE', "%$sText%")
             ->get();
 
-        return view('welcome', compact('foundUsers', 'sText'));
+        return view('search-result', compact('foundUsers', 'sText'));
 
     }
 }
