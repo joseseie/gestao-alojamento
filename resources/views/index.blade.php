@@ -7,7 +7,7 @@
         <div class="container py-md-5 py-4">
             <div class="row align-items-center pt-4">
                 <div class="col-md-6 banner-left pe-xl-5">
-                    <h4>Hi, I'm Mary Ateer</h4>
+                    <h4>Ola, Eu sou Moises!</h4>
                     <h3 class="mb-3 mt-1">Developer</h3>
                     <p class="banner-sub me-md-5">I love to work in UI/UX designing.
                         I always try my best to make good UI with the best UX.
